@@ -1,7 +1,7 @@
 # Chicago Public Schools Information for Parents
 
 ## What is this?
-This is a script uses publicly available software - made available by the Chicago Public Schools system - to pull information about public schools in  the city of Chicago.
+This is a script uses publicly available software - made available by the Chicago Public Schools system - to pull information about public schools in the city of Chicago.  For more information about the REST APIs available, you can visit here:  https://api.cps.edu/.
 
 ## How do I use it?
 Running this script will generate a CSV file that you can open in any spreadsheet program.  Currently, the file is set to filter for:
