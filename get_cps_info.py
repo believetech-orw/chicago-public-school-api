@@ -21,7 +21,7 @@ SCHOOL_PROFILES.sort(key=lambda s: s.get('Short_Name', ''))
 SCHOOL_PROFILES = [S for S in SCHOOL_PROFILES if S.get('Is_High_School', 'N') == 'Y']
 print(f'High Schools: {len(SCHOOL_PROFILES)}')
 
-# eliminate schools with no graduation rate data
+# filter school schools with graduation rate data
 SCHOOL_PROFILES = [S for S in SCHOOL_PROFILES if S.get('Graduation_Rate_School', '') != '']
 print(f'With Grad Rate Data: {len(SCHOOL_PROFILES)}')
 
@@ -30,7 +30,7 @@ GRAD_RATE = 80
 SCHOOL_PROFILES = [S for S in SCHOOL_PROFILES if float(S.get('Graduation_Rate_School', '0.0')) > GRAD_RATE]
 print(f'Grad Rate > {GRAD_RATE}%: {len(SCHOOL_PROFILES)}')
 
-# eliminate schools with no college enrollment rate data
+# filter for schools with college enrollment rate data
 SCHOOL_PROFILES = [S for S in SCHOOL_PROFILES if S.get('College_Enrollment_Rate_School', '') != '']
 print(f'With College Enrollment Data: {len(SCHOOL_PROFILES)}')
 
@@ -40,7 +40,7 @@ SCHOOL_PROFILES = [S for S in SCHOOL_PROFILES if float(S.get('College_Enrollment
 print(f'College Enrollment Rate > {COLLEGE_ENROLLMENT_RATE}%: {len(SCHOOL_PROFILES)}')
 
 # filter for schools with swim programs
-# (PAYTON and NORTHSIDE have Swim programs, but the CPS data doesn't show it)
+# (PAYTON and NORTHSIDE have Swim programs, but the CPS data doesn't show it, someone at those schools should clean up their CPS data)
 SCHOOL_PROFILES = [S for S in SCHOOL_PROFILES if ('Swim' in S.get('Programs_SportsAndFitness', '') or 'PAYTON' in S.get('Short_Name', '') or 'NORTHSIDE PREP' in S.get('Short_Name', ''))]
 print(f'With Swim Program: {len(SCHOOL_PROFILES)}')
 
